@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<kotlin.version>1.5.21</kotlin.version>
-		<spring-cloud.version>3.0.4</spring-cloud.version>
+		<spring-cloud.version>3.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -30,6 +30,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-client</artifactId>
+			<version>${spring-cloud.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>${spring-cloud.version}</version>
 		</dependency>
 

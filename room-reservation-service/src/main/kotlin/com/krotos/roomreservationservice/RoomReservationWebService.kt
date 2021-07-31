@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
 
 @RestController
-@RequestMapping("/room-reservations")
+@RequestMapping("/room-reservations2")
 class RoomReservationWebService(val restTemplate: RestTemplate) {
 
     @GetMapping
@@ -18,9 +18,9 @@ class RoomReservationWebService(val restTemplate: RestTemplate) {
     }
 
     fun getAllRooms(): List<Room>? {
-        val exchange = restTemplate.exchange("http://ROOMSERVICES/rooms",
+        val roomsResponse = restTemplate.exchange("http://ROOMSERVICES/rooms",
             HttpMethod.GET, null, object : ParameterizedTypeReference<List<Room>>() {})
-        return exchange.body
+        return roomsResponse.body
     }
 
 }

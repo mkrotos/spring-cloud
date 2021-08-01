@@ -1,4 +1,4 @@
-package com.krotos.guestservices
+package com.krotos.reservationservices
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

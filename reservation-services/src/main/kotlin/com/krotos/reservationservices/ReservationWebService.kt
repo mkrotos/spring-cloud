@@ -1,4 +1,4 @@
-package com.krotos.guestservices
+package com.krotos.reservationservices
 
 import org.springframework.web.bind.annotation.*
 import java.text.ParseException

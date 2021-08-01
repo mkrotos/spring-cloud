@@ -1,4 +1,4 @@
-package com.krotos.guestservices
+package com.krotos.reservationservices
 
 import java.util.*
 import javax.persistence.*

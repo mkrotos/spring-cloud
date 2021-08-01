@@ -1,4 +1,4 @@
-package com.krotos.guestservices
+package com.krotos.reservationservices
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

@@ -1,21 +1,26 @@
 package com.krotos.guestservices
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import java.text.ParseException
+import java.text.SimpleDateFormat
 
 @RestController
 @RequestMapping("/reservations")
 class ReservationWebService(val repository: ReservationRepository) {
 
     @GetMapping
-    fun getAllReservations(): Iterable<Reservation> {
-        return repository.findAll()
+    fun getAllReservations(@RequestParam(name = "date", required = false) dateString: String?): Iterable<Reservation> {
+        val date = try {
+            dateString?.map { SimpleDateFormat("yyyy-MM-dd").parse(dateString) }?.first()
+        } catch (ex: ParseException) {
+            null
+        }
+
+        return if (date != null) repository.findAllByReservationDate(date) else repository.findAll()
     }
 
     @GetMapping("/{id}")
-    fun getReservation(@PathVariable("id") id:Long): Reservation {
+    fun getReservation(@PathVariable("id") id: Long): Reservation {
         return repository.findById(id).get()
     }
 

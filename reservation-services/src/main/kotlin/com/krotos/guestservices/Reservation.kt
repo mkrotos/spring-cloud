@@ -1,6 +1,6 @@
 package com.krotos.guestservices
 
-import java.time.LocalDate
+import java.util.*
 import javax.persistence.*
 
 @Entity
@@ -15,5 +15,5 @@ class Reservation(
     @Column(name = "GUEST_ID")
     var guestId: Long,
     @Column(name = "RES_DATE")
-    var reservationDate: LocalDate,
+    var reservationDate: Date,
 )

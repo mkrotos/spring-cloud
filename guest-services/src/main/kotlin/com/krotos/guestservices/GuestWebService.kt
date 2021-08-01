@@ -15,8 +15,8 @@ class GuestWebService(val repository: GuestRepository) {
     }
 
     @GetMapping("/{id}")
-    fun getGuest(@PathVariable("id") id:Long): Guest {
-        return repository.findById(id).get()
+    fun getGuest(@PathVariable("id") id:Long): Guest? {
+        return repository.findById(id).orElse(null)
     }
 
 }
